@@ -7,7 +7,7 @@ async function storeData(id, data) {
       keyFilename: process.env.GOOGLE_APPLICATION_CREDENTIALS
     });
  
-    const predictCollection = db.collection('prediction');
+    const predictCollection = db.collection('predictions');
     await predictCollection.doc(id).set(data);
   } catch (error) {
     console.error('Firestore error:', error);
@@ -21,7 +21,7 @@ async function getHistories() {
       keyFilename: process.env.GOOGLE_APPLICATION_CREDENTIALS
     });
  
-    const predictCollection = db.collection('prediction');
+    const predictCollection = db.collection('predictions');
     const snapshot = await predictCollection.get();
     const histories = [];
  

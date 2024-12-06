@@ -32,7 +32,8 @@ async function postPredictHandler(request, h) {
     data: {
       id,
       result: label,
-      suggestion
+      suggestion,
+      createdAt
     }
   });
   response.code(201);
